@@ -2,13 +2,13 @@
   <div class="container-fluid bg-brand-blue-dark">
     <div class="container">
       <div class="row align-items-center py-2">
-        <div class=" col-lg-3 col-6">
+        <div class=" col-lg-3 col-sm-4 col-6">
           <RouterLink to="/" title="Camdex Education | Home">
             <img :src="'/images/logo.png'" class="w-100" alt="Camdex Education">
           </RouterLink>
         </div>
 
-        <div class="col-lg-9 col-6">
+        <div class="col-lg-9 col-sm-8 col-6">
           <div class="d-flex justify-content-end d-lg-none">
             <button
               class="menu-toggle-btn"

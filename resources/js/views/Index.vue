@@ -21,7 +21,7 @@ Futures
 
 
 
-<div class="row g-3 hero-cta-row pb-5 mb-3">
+<div class="row g-3 hero-cta-row pb-lg-5 mb-lg-3">
    <div class="col-sm-4 col-12">
       <a href="#join-us" class="btn hero-btn-enroll w-100">Enroll</a>
    </div>
@@ -42,9 +42,9 @@ Futures
                 <img :src="'/images/slider-1.png'" class="d-block w-100 hero-carousel-img" alt="Camdex Education">
     </div>
 
-    <!-- <div class="carousel-item">
+    <div class="carousel-item">
              <img :src="'/images/slider-2.png'" class="d-block w-100 hero-carousel-img" alt="Camdex Education">
-    </div> -->
+    </div>
   </div>
  <button class="carousel-control-prev d-none d-md-flex" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -145,7 +145,7 @@ Futures
    <div class="container-fluid banner-section py-5">
       <div class="container py-2">
          <div class="row g-3 g-lg-4 align-items-center">
-            <div class="col-lg-4">
+            <div class="col-lg-4 col-sm-4">
                <div class="d-flex flex-column gap-2 gap-lg-3">
                   <p class="font-40 text-brand-blue fw-bold">Are you looking for</p>
 
@@ -153,11 +153,11 @@ Futures
             </div>
 
 
-             <div class="col-lg-4 col-6">
+             <div class="col-lg-4  col-sm-4 col-6">
                 <img :src="'/images/edexcel.png'" class="w-100" alt="Camdex Education">
             </div>
 
-             <div class="col-lg-4 col-6">
+             <div class="col-lg-4 col-sm-4 col-6">
                 <img :src="'/images/cambridge.png'" class="w-100" alt="Camdex Education">
             </div>
 
@@ -225,7 +225,7 @@ Futures
                </h2>
             </div>
             <div ref="instructorsCarousel" class="row instructors-grid">
-               <div class="col-lg-4 col-sm-6 pb-lg-5">
+               <div class="col-lg-4 col-sm-12 pb-lg-5">
                   <article class="instructor-flip-card">
                      <div class="instructor-flip-card-inner">
                         <div class="instructor-flip-front">
@@ -246,7 +246,7 @@ Futures
                   </h3>
                   <p class="font-20 text-dark fw-normal ">Lecture</p>
                </div>
-               <div class="col-lg-4 col-sm-6 pb-lg-5">
+               <div class="col-lg-4 col-sm-12 pb-lg-5">
                   <article class="instructor-flip-card">
                      <div class="instructor-flip-card-inner">
                         <div class="instructor-flip-front">
@@ -267,7 +267,7 @@ Futures
                   </h3>
                   <p class="font-20 text-dark fw-normal ">Lecture</p>
                </div>
-               <div class="col-lg-4 col-sm-6 pb-lg-5">
+               <div class="col-lg-4 col-sm-12 pb-lg-5">
                   <article class="instructor-flip-card">
                      <div class="instructor-flip-card-inner">
                         <div class="instructor-flip-front">
@@ -288,7 +288,7 @@ Futures
                   </h3>
                   <p class="font-20 text-dark fw-normal ">Lecture</p>
                </div>
-               <div class="col-lg-4 col-sm-6 pb-lg-5">
+               <div class="col-lg-4 col-sm-12 pb-lg-5">
                   <article class="instructor-flip-card">
                      <div class="instructor-flip-card-inner">
                         <div class="instructor-flip-front">
@@ -309,7 +309,7 @@ Futures
                   </h3>
                   <p class="font-20 text-dark fw-normal ">Lecture</p>
                </div>
-               <div class="col-lg-4 col-sm-6 pb-lg-5">
+               <div class="col-lg-4 col-sm-12 pb-lg-5">
                   <article class="instructor-flip-card">
                      <div class="instructor-flip-card-inner">
                         <div class="instructor-flip-front">
@@ -330,7 +330,7 @@ Futures
                   </h3>
                   <p class="font-20 text-dark fw-normal ">Lecture</p>
                </div>
-               <div class="col-lg-4 col-sm-6 pb-lg-5">
+               <div class="col-lg-4 col-sm-12 pb-lg-5">
                   <article class="instructor-flip-card">
                      <div class="instructor-flip-card-inner">
                         <div class="instructor-flip-front">
@@ -611,7 +611,7 @@ Futures
          <div class="row">
             <div class="col-lg-9 mx-auto bg-white py-3 px-lg-5 px-sm-4 e-top-section">
                <h2 class="text-dark fw-bold font-48 pb-3">
-                  The Camdex <br> Experience
+                  The Camdex <br class="d-none d-sm-block"> Experience
                </h2>
                <p class="text-dark fw-normal font-16">
                   we prepare you to launch your career by providing a supportive,  creative, and professional environment from which to learn practical  skills, build a network of industry contacts, and gain real-world  experience. You’ll have the opportunity to generate innovative design  and business solutions.
@@ -807,10 +807,10 @@ Futures
             return;
          }
 
-         const isMobileViewport = window.innerWidth <= 767;
+         const isSliderViewport = window.innerWidth <= 991;
          const $carousel = $(instructorsCarousel.value);
 
-         if (!isMobileViewport) {
+         if (!isSliderViewport) {
             if ($carousel.hasClass('owl-loaded')) {
                $carousel.trigger('destroy.owl.carousel');
             }
@@ -840,6 +840,10 @@ Futures
                '<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>',
             ],
             smartSpeed: 600,
+            responsive: {
+               0: { items: 1 },
+               768: { items: 2 },
+            },
          });
       };
 

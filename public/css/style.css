@@ -720,8 +720,9 @@ ul li {
 
 .hero-carousel.carousel {
    position: relative !important;
-   right: auto !important;
-   bottom: auto !important;
+    right: 5em !important;
+    bottom: -3.2em !important;
+    width: 670px;
 }
 
 .hero-carousel .carousel-inner {
