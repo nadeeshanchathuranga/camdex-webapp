@@ -20,11 +20,42 @@ Futures
     <p class="text-white font-18 fw-normal pb-4">Our cutting-edge services empower businesses to achieve remarkable growth and success. Discover how we can transform your vision into reality.</p>
 
 
-    <div class="row">
 
-    </div>
+<div class="row g-3 hero-cta-row pb-5 mb-3">
+   <div class="col-sm-4 col-12">
+      <a href="#join-us" class="btn hero-btn-enroll w-100">Enroll</a>
+   </div>
+   <div class="col-sm-6 col-12">
+      <a href="#about" class="btn hero-btn-learn w-100">
+         Learn More <i class="fa-brands fa-youtube ms-2 text-danger font-30" aria-hidden="true"></i>
+      </a>
+   </div>
+
+   </div>
 </div>
-<div class="col-7"></div>
+<div class="col-7">
+
+
+   <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="false">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+           <img :src="'/images/slider-1.png'" class="w-100" alt="Camdex Education">
+    </div>
+    
+    <div class="carousel-item">
+         <img :src="'/images/slider-1.png'" class="w-100" alt="Camdex Education">
+    </div>
+  </div>
+ <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+   <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
 
 </div>
 
@@ -657,6 +688,7 @@ Futures
    const validationMessage = ref('');
    const reviewsCarousel = ref(null);
    const openSyllabusSection = ref('cambridge');
+   let heroCarouselInstance = null;
 
    // Replace this with your real YouTube share link.
    const videoLink = 'https://youtu.be/_UCA0tXzMMU?si=7dcjhq9rlp0Zq3db';
@@ -768,8 +800,19 @@ Futures
 
    onMounted(() => {
        const modalElement = document.getElementById('videoModal');
+         const heroCarouselElement = document.getElementById('carouselExampleFade');
 
          initReviewsCarousel();
+
+         if (heroCarouselElement && window.bootstrap?.Carousel) {
+            heroCarouselInstance = new window.bootstrap.Carousel(heroCarouselElement, {
+               interval: 3000,
+               ride: 'carousel',
+               pause: false,
+               touch: true,
+               wrap: true,
+            });
+         }
 
        if (modalElement) {
            modalElement.addEventListener('hide.bs.modal', handleModalHide);
@@ -786,6 +829,12 @@ Futures
        }
 
          destroyReviewsCarousel();
+
+          if (heroCarouselInstance) {
+                heroCarouselInstance.dispose();
+                heroCarouselInstance = null;
+          }
+
        closeVideo();
    });
 
@@ -861,5 +910,46 @@ Futures
    .cambridge-brand {
       text-align: right;
    }
+}
+
+.hero-cta-row {
+   max-width: 440px;
+}
+
+.hero-btn-enroll,
+.hero-btn-learn {
+     transition: .5s ease-in-out;
+     min-height: 60px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 400;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+}
+.hero-btn-enroll {
+
+   background: #f2f2f2;
+   color: #1f2d3d;
+}
+
+.hero-btn-enroll:hover {
+   background: #9cb8ff;
+   color: #fff;
+    transition: .5s ease-in-out;
+}
+
+.hero-btn-learn {
+   border: 2px solid #9cb8ff;
+   color: #ffffff;
+   background: rgba(16, 44, 117, 0.45);
+}
+
+.hero-btn-learn:hover {
+   background: #ffffff;
+   color: #15367d;
+    transition: .5s ease-in-out;
+   border-color: #ffffff;
 }
 </style>
