@@ -90,8 +90,110 @@
             </div>
         </div>
 
+    <div class="floating-actions">
+        <a
+            href="https://wa.me/17722902999"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="floating-btn whatsapp-btn"
+            aria-label="Chat on WhatsApp"
+        >
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+        </a>
+
+        <button
+            v-show="showScrollTop"
+            type="button"
+            class="floating-btn top-btn"
+            aria-label="Scroll to top"
+            @click="scrollToTop"
+        >
+            <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+        </button>
+    </div>
+
 </template>
 
 <script setup>
+import { onBeforeUnmount, onMounted, ref } from 'vue';
+
 const currentYear = new Date().getFullYear();
+const showScrollTop = ref(false);
+
+const handleScroll = () => {
+    showScrollTop.value = window.scrollY > 280;
+};
+
+const scrollToTop = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+    });
+};
+
+onMounted(() => {
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+});
+
+onBeforeUnmount(() => {
+    window.removeEventListener('scroll', handleScroll);
+});
 </script>
+
+<style scoped>
+.floating-actions {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.floating-btn {
+    width: 48px;
+    height: 48px;
+    border: 0;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.24);
+}
+
+.floating-btn i {
+    font-size: 24px;
+    line-height: 1;
+}
+
+.whatsapp-btn {
+    background: #25d366;
+}
+
+.top-btn {
+    background: #3a5bad;
+}
+
+@media (max-width: 575.98px) {
+    .floating-actions {
+        right: 12px;
+        bottom: 12px;
+    }
+
+    .floating-btn {
+        width: 44px;
+        height: 44px;
+    }
+}
+</style>

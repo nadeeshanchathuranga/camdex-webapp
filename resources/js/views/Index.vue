@@ -1,5 +1,44 @@
 <template>
    <Header />
+
+
+
+
+
+ <div class="container-fluid slider-section bg-brand-blue-dark">
+      <div class="container ">
+<div class="row">
+<div class="col-5">
+    <h3 class="fw-bold text-light-white font-110">
+        Nurturing Minds
+
+    </h3>
+    <h3 class="fw-bold text-white font-110 pb-4">
+Inspiring
+Futures
+    </h3>
+    <p class="text-white font-18 fw-normal pb-4">Our cutting-edge services empower businesses to achieve remarkable growth and success. Discover how we can transform your vision into reality.</p>
+
+
+    <div class="row">
+
+    </div>
+</div>
+<div class="col-7"></div>
+
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
    <div class="container-fluid google-reviews-section py-5 bg-white">
       <div class="container py-lg-5">
          <div class="row">
@@ -72,10 +111,36 @@
          </div>
       </div>
    </div>
-   <div class="container-fluid">
-      <div class="row">
-         <div class="col-12 px-0">
-            <img :src="'/images/banner.png'" class="w-100" alt="Camdex Education">
+   <div class="container-fluid banner-section py-5">
+      <div class="container py-2">
+         <div class="row g-3 g-lg-4 align-items-center">
+            <div class="col-lg-4">
+               <div class="d-flex flex-column gap-2 gap-lg-3">
+                  <p class="font-40 text-brand-blue fw-bold">Are you looking for</p>
+
+               </div>
+            </div>
+
+
+             <div class="col-lg-4">
+                <img :src="'/images/edexcel.png'" class="w-100" alt="Camdex Education">
+            </div>
+
+             <div class="col-lg-4">
+                <img :src="'/images/cambridge.png'" class="w-100" alt="Camdex Education">
+            </div>
+
+         </div>
+
+         <div class="row pt-3 pt-lg-4">
+            <div class="col-12">
+               <h2 class="banner-main-title mb-0">
+                  <span class="main-blue">IGCSE</span>
+                  <span class="sub-blue">Classes From</span>
+                  <span class="main-red">Grade 7</span>
+                  <span class="main-blue">to O/Levels?</span>
+               </h2>
+            </div>
          </div>
       </div>
    </div>
@@ -409,7 +474,7 @@
 
 <p class="pt-4"><a href="" class="text-dark fw-normal font-16 hvr-forward"><u>View All Requirements</u></a></p>
 
-  
+
                </section>
             </div>
          </div>
@@ -725,3 +790,76 @@
    });
 
 </script>
+
+<style scoped>
+.banner-section {
+   background: #ccdaf0;
+}
+
+.banner-top-text {
+   color: #2a57ab;
+   font-size: clamp(1.8rem, 3.1vw, 3.35rem);
+   line-height: 1.1;
+   font-weight: 300;
+}
+
+.edexcel-logo {
+   color: #003f76;
+   font-size: clamp(2.2rem, 4.4vw, 5.2rem);
+   font-weight: 600;
+   letter-spacing: 0.02em;
+   line-height: 1;
+}
+
+.mini-squares {
+   display: grid;
+   grid-template-columns: repeat(4, 14px);
+   gap: 6px;
+}
+
+.mini-squares span {
+   width: 14px;
+   height: 14px;
+   border-radius: 3px;
+   background: #73c6ef;
+}
+
+.cambridge-brand {
+   color: #0b1b3b;
+   font-size: clamp(1.3rem, 2vw, 2.15rem);
+   font-weight: 600;
+   line-height: 1.2;
+   text-align: left;
+}
+
+.banner-main-title {
+   display: flex;
+   flex-wrap: wrap;
+   align-items: baseline;
+   gap: 0.35em;
+   font-weight: 700;
+   line-height: 1.02;
+}
+
+.banner-main-title .main-blue {
+   color: #2f78de;
+   font-size: clamp(2.2rem, 6vw, 8.3rem);
+}
+
+.banner-main-title .sub-blue {
+   color: #4f78c0;
+   font-size: clamp(1.9rem, 4.2vw, 5rem);
+   font-weight: 400;
+}
+
+.banner-main-title .main-red {
+   color: #ef2f3b;
+   font-size: clamp(2.2rem, 6vw, 8.3rem);
+}
+
+@media (min-width: 992px) {
+   .cambridge-brand {
+      text-align: right;
+   }
+}
+</style>

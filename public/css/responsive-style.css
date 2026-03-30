@@ -17,11 +17,11 @@
 }
 .video-section {
     min-height: 250px;
-  
+
 }
 .tution-fees-row {
     min-height: auto;
-  
+
 }
 .card-1 {
     width: 100%;
@@ -31,17 +31,17 @@
 }
 .syllabus-toggle i {
     font-size: 27px;
-     
+
 }
 
 .syllabus-toggle {
-   
+
     font-size: 27px;
-    
+
 }
 .stats-item h3 {
     font-size: 48px;
-     
+
 }
 
 
@@ -50,13 +50,13 @@
 
 @media screen and (min-width:768px) and (max-width:991px) {
 .stats-item p {
-     
+
     font-size: 16px;
-     
+
 }
 .tution-fees-row {
     min-height: auto;
-     
+
 }
 .font-172 {
     font-size: 90px;
@@ -67,7 +67,7 @@
 
 .e-top-section {
     margin-top: 2em;
- 
+
 }
 .section-e {
     height: 370px;
@@ -99,7 +99,7 @@
 }
 .e-top-section {
     margin-top: 2em;
- 
+
 }
 .section-e {
     height: 370px;
@@ -150,7 +150,7 @@
 
 .tution-fees-section{
     min-height: 900px;
-   
+
 }
 
  .card-1{
@@ -159,25 +159,28 @@
 
 .tution-fees-row{
     min-height: 900px;
-   
+
 }
 .stats-item h3 {
     font-size: 64px;
-    
+
 }
 .stats-item p {
-   
+
     font-size: 30px;
-    
+
     gap: 1.5rem;
 }
 .stats-item i {
-    
+
     font-size: 27px;
 }
 .syllabus-toggle {
- 
+
     font-size: 36px;
-    
+
+}
+.font-40 {
+    font-size: 40px;
 }
 }

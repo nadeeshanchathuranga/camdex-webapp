@@ -133,7 +133,9 @@ ul li {
 .font-30 {
     font-size: 20px;
 }
-
+.font-40 {
+    font-size: 33px;
+}
 .font-48 {
     font-size: 48px;
 }
@@ -165,6 +167,9 @@ ul li {
 .bg-light-dark
 {
     background-color: #D9D9D9;
+}
+.text-light-white{
+    color: #c9c9c98b;
 }
 .section-e {
     height: 470px;
@@ -539,7 +544,7 @@ ul li {
     width: 290px;
 }
 
- 
+
 .syllabus-toggle {
     width: 100%;
     border: 0;
@@ -597,4 +602,8 @@ ul li {
     color: #2a2d36;
     font-weight: 500;
 }
- 
+.btn-nav {
+    padding: 15px 25px;
+    background-color: #3053a3;
+    border-radius: 30px;
+}
