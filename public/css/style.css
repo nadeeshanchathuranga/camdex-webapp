@@ -589,6 +589,38 @@ ul li {
 .syllabus-toggle i {
     font-size: 35px;
     color: #21252c;
+    transition: transform 0.3s ease;
+}
+
+.syllabus-group {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Soft shadow */
+    margin-bottom: 20px;
+}
+
+.syllabus-year-pill {
+    display: inline-block;
+    background-color: #f1f5f9;
+    color: #475569;
+    border: none;
+    padding: 8px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.syllabus-year-pill.active-pill {
+    background-color: #0d6efd;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(13, 110, 253, 0.3);
+}
+
+.syllabus-year-pill:hover:not(.active-pill) {
+    background-color: #e2e8f0;
 }
 
 .syllabus-year {
@@ -597,6 +629,10 @@ ul li {
     color: #3a5bad;
     margin-bottom: 0.5em;
     margin-top: 1.5em;
+}
+
+.syllabus-content {
+    animation: fadeIn 0.4s ease-in-out;
 }
 
 .syllabus-table-wrap {
