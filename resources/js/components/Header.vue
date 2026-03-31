@@ -11,7 +11,7 @@
         <div class="col-lg-9 col-sm-8 col-6">
           <div class="d-flex justify-content-end d-lg-none">
             <button
-              class="menu-toggle-btn"
+              :class="{ 'menu-toggle-btn': true, 'active': isMenuOpen }"
               type="button"
               aria-label="Toggle navigation"
               :aria-expanded="isMenuOpen ? 'true' : 'false'"
@@ -47,8 +47,13 @@
           </nav>
         </div>
 
-        <div v-if="isMenuOpen" class="col-12 d-lg-none mt-2">
-          <nav class="mobile-nav-panel">
+        <div class="col-12 d-lg-none mt-2">
+          <nav :class="{ 'mobile-nav-panel': true, 'open': isMenuOpen }">
+            <div class="d-flex justify-content-end mb-3">
+              <button class="nav-close-btn" @click="closeMenu" aria-label="Close menu">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
             <ul class="mobile-nav-links mb-0">
               <li>
                 <RouterLink class="nav-link-custom" to="/" exact-active-class="active" aria-current="page" @click="closeMenu">Home</RouterLink>
@@ -71,6 +76,12 @@
             </ul>
           </nav>
         </div>
+
+        <div
+          v-if="isMenuOpen"
+          class="menu-overlay d-lg-none"
+          @click="closeMenu"
+        ></div>
       </div>
     </div>
   </div>

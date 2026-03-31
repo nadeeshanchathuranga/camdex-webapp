@@ -105,6 +105,9 @@ a:hover {
     outline: 0;
     box-shadow: unset
 }
+.fw-normal {
+    font-weight: 500 !important;
+}
 
 ul li {
     list-style: none
@@ -117,7 +120,7 @@ ul li {
 }
 
 .font-16 {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .font-18 {
@@ -134,7 +137,7 @@ ul li {
     font-size: 20px;
 }
 .font-40 {
-    font-size: 33px;
+    font-size: 30px;
 }
 .font-48 {
     font-size: 48px;
@@ -146,7 +149,7 @@ ul li {
     font-size: 60px;
 }
 .font-172 {
-    font-size: 144px;
+    font-size: 100px;
 }
 .a-main:hover {
     color: #ff2424 !important;
@@ -172,7 +175,7 @@ ul li {
     color: #c9c9c98b;
 }
 .section-e {
-    height: 470px;
+    height: 380px;
 }
 
 
@@ -202,8 +205,7 @@ ul li {
 }
 
 .google-reviews-rating {
-    display: flex;
-    align-items: center;
+
     gap: 0.55rem;
     color: #222;
     font-size: 14px;
@@ -269,7 +271,7 @@ ul li {
 
 .review-flip-card {
     height: 400px;
-    perspective: 1000px;
+    perspective: 2600px;
 }
 
 
@@ -278,7 +280,7 @@ ul li {
     position: relative;
     width: 100%;
     height: 100%;
-    transition: transform 0.65s ease;
+    transition: transform 1.5s cubic-bezier(0.22, 0.61, 0.36, 1);
     transform-style: preserve-3d;
 }
 
@@ -293,15 +295,26 @@ ul li {
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
+    transition: opacity 1.35s ease;
 }
 
 .review-flip-front {
     display: flex;
     flex-direction: column;
+    opacity: 1;
 }
 
 .review-flip-back {
     transform: rotateY(180deg);
+    opacity: 0;
+}
+
+.review-flip-card:hover .review-flip-front {
+    opacity: 0;
+}
+
+.review-flip-card:hover .review-flip-back {
+    opacity: 1;
 }
 
 .review-photo {
@@ -335,14 +348,14 @@ ul li {
 
 .instructor-flip-card {
     height: 580px;
-    perspective: 1000px;
+    perspective: 2600px;
 }
 
 .instructor-flip-card-inner {
     position: relative;
     width: 100%;
     height: 100%;
-    transition: transform 0.65s ease;
+    transition: transform 1.2s cubic-bezier(0.22, 0.61, 0.36, 1);
     transform-style: preserve-3d;
 }
 
@@ -358,6 +371,7 @@ ul li {
     height: 100%;
     overflow: hidden;
     backface-visibility: hidden;
+    transition: opacity 0.35s ease;
 }
 
 .instructor-flip-front img {
@@ -369,7 +383,17 @@ ul li {
 .instructor-flip-back {
     transform: rotateY(180deg);
     background: #3a5bad;
+    opacity: 0;
 
+
+}
+
+.instructor-flip-card:hover .instructor-flip-front {
+    opacity: 0;
+}
+
+.instructor-flip-card:hover .instructor-flip-back {
+    opacity: 1;
 }
 
 .google-reviews-carousel.owl-carousel .owl-nav.disabled {
@@ -504,8 +528,10 @@ ul li {
 
 .e-top-section
 {
+    border-radius: 20px;
     margin-top: -4em;
     z-index: 100;
+    box-shadow: 0 22px 28px -22px rgba(0, 0, 0, 0.45);
 }
 
 .quick-links .divider {
@@ -514,8 +540,9 @@ ul li {
     background-color: #000;
 
 }
-.mt8{
-        margin-top: -0.8em;
+
+.mt8 {
+    margin-top: -1.1em;
 }
 .tution-fees-section{
     min-height: 700px;
@@ -621,6 +648,17 @@ ul li {
   justify-content: center;
   gap: 5px;
   padding: 0 10px;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.menu-toggle-btn.active {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.6);
 }
 
 .menu-toggle-line {
@@ -670,6 +708,43 @@ ul li {
 .nav-link-custom:hover,
 .nav-link-custom.active {
    color: #b9b7b7;
+}
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 99;
+  animation: fadeIn 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.nav-close-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  margin-right: -10px;
+}
+
+.nav-close-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(90deg);
 }
 
 .hero-cta-row {

@@ -92,6 +92,14 @@
 
     <div class="floating-actions">
         <a
+            href="#"
+            class="apply-now-btn"
+            aria-label="Apply now"
+        >
+            <img :src="applyNowImage" alt="Apply now" />
+        </a>
+
+        <a
             href="https://wa.me/17722902999"
             target="_blank"
             rel="noopener noreferrer"
@@ -108,6 +116,21 @@
             aria-label="Scroll to top"
             @click="scrollToTop"
         >
+            <svg class="progress-circle" viewBox="0 0 48 48">
+                <circle
+                    class="progress-background"
+                    cx="24"
+                    cy="24"
+                    r="22"
+                />
+                <circle
+                    class="progress-fill"
+                    cx="24"
+                    cy="24"
+                    r="22"
+                    :style="{ strokeDashoffset: progressOffset }"
+                />
+            </svg>
             <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
         </button>
     </div>
@@ -118,10 +141,22 @@
 import { onBeforeUnmount, onMounted, ref } from 'vue';
 
 const currentYear = new Date().getFullYear();
+const applyNowImage = '/images/apply-now.png';
 const showScrollTop = ref(false);
+const scrollProgress = ref(0);
+const progressOffset = ref(138.16); // 2 * Math.PI * 22 (circumference)
 
 const handleScroll = () => {
     showScrollTop.value = window.scrollY > 280;
+
+    // Calculate scroll progress percentage
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrolled = window.scrollY;
+    scrollProgress.value = docHeight > 0 ? (scrolled / docHeight) * 100 : 0;
+
+    // Update progress circle offset (138.16 is the circumference)
+    const circumference = 2 * Math.PI * 22;
+    progressOffset.value = circumference - (scrollProgress.value / 100) * circumference;
 };
 
 const scrollToTop = () => {
@@ -151,6 +186,24 @@ onBeforeUnmount(() => {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+}
+
+.apply-now-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.apply-now-btn img {
+    width: 55px;
+    height: auto;
+    display: block;
+}
+
+.apply-now-btn:hover {
+    transform: translateY(-2px);
 }
 
 .floating-btn {
@@ -183,12 +236,45 @@ onBeforeUnmount(() => {
 
 .top-btn {
     background: #3a5bad;
+    position: relative;
+}
+
+.top-btn .progress-circle {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.progress-background {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.1);
+    stroke-width: 2;
+}
+
+.progress-fill {
+    fill: none;
+    stroke: #ffd700;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-dasharray: 138.16;
+    transition: stroke-dashoffset 0.1s ease;
+}
+
+.top-btn i {
+    position: relative;
+    z-index: 1;
 }
 
 @media (max-width: 575.98px) {
     .floating-actions {
         right: 12px;
         bottom: 12px;
+    }
+
+    .apply-now-btn img {
+        width: 48px;
     }
 
     .floating-btn {

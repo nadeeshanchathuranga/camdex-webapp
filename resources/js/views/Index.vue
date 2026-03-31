@@ -71,11 +71,11 @@ Futures
 
 
    <div class="container-fluid google-reviews-section py-5 bg-white">
-      <div class="container py-lg-5">
+      <div class="container py-lg-3">
          <div class="row">
             <div class="col-12">
-               <h3 class="font-24 fw-normal text-black pb-4">Customer reviews on Google</h3>
-               <p class="google-reviews-rating mb-4">
+               <h3 class="font-48 fw-bolder text-center text-black pb-3">Customer reviews on Google</h3>
+               <p class="google-reviews-rating mb-4 text-center ">
                   <span class="google-reviews-stars" aria-hidden="true">
                   <i class="fa-solid fa-star font-16"></i>
                   <i class="fa-solid fa-star font-16"></i>
@@ -102,11 +102,14 @@ Futures
                               </div>
                            </div>
                            <p class="font-16 fw-normal text-black pb-3">The best service I've received in a long time! The team was incredibly responsive, and their expertise was evident in the final product. There was a small miscommunication initially, but they quickly resolved it. I would definitely work with them again.</p>
-                           <h4 class="font-16 fw-bolder text-black pb-2">Isabella Turner</h4>
-                           <p class="review-role font-12 fw-normal pb-2">Project Manager</p>
-                           <div class="row">
+
+                           <div class="row align-items-center">
                               <div class="col-3">
-                                 <img :src="'/images/user.png'" alt="Isabella Turner" class="w-100 rounded-circle ">
+                                 <img :src="'/images/user.png'" alt="Isabella Turner" class="w-100 rounded-circle border-dark border-3">
+                              </div>
+                              <div class="col-8">
+<h4 class="font-16 fw-bolder text-black pb-1">Isabella Turner</h4>
+                           <p class="review-role font-12 fw-normal ">Project Manager</p>
                               </div>
                            </div>
                         </div>
@@ -218,9 +221,9 @@ Futures
                <p class="pt-4"><a href="" class="text-dark fw-normal font-16 hvr-forward"><u>Institute Overview</u></a></p>
             </div>
          </div>
-         <div id="instructors" class="row pt-5">
-            <div class="col-12 pt-lg-4">
-               <h2 class="fw-normal font-black font-64 pb-lg-5 pb-3">
+         <div id="instructors" class="row ">
+            <div class="col-12 pt-5">
+               <h2 class="font-48 fw-bolder text-center text-black pb-4">
                   Instructors Directory.
                </h2>
             </div>
@@ -356,7 +359,7 @@ Futures
 
 
          <div id="faq" class="row pt-5">
-<div class="col-12  "><h2 class="fw-normal font-black font-64 pb-3">Make a Tour. </h2>
+<div class="col-12  "><h2 class="font-48 fw-bolder text-center text-black pb-4">Make a Tour. </h2>
 <p class="fw-normal font-18 text-dark">Choose your onboard grade to access instructors’ free lessons. Selecting the correct grade ensures the content matches your current knowledge level. These lessons help you understand basic concepts, build confidence, and experience the teaching style. Use this opportunity to learn step by step and prepare yourself for more advanced topics ahead </p>
 
 
@@ -470,7 +473,7 @@ Futures
          <div class="row pt-5">
             <div class="col-12">
                <section id="apply-now" class="apply-now-section py-4 py-lg-5">
-                  <h2 class="font-172 fw-bolder text-dark text-center pb-3">APPLY NOW</h2>
+                  <h2 class="font-172 fw-bold text-dark text-center pb-3">APPLY NOW</h2>
 
          <div class="row align-items-center border-bottom border-3 border-top-0 border-end-0 border-start-0 border-secondary pb-4 mx-3 my-5">
                     <div class="col-2"><p class="fw-bold font-20 text-dark">01</p></div>
@@ -609,9 +612,9 @@ Futures
    <div class="container-fluid section-e">
       <div class="container">
          <div class="row">
-            <div class="col-lg-9 mx-auto bg-white py-3 px-lg-5 px-sm-4 e-top-section">
+            <div class="col-lg-9 mx-auto bg-white py-5 px-lg-5 px-sm-4 e-top-section text-center">
                <h2 class="text-dark fw-bold font-48 pb-3">
-                  The Camdex <br class="d-none d-sm-block"> Experience
+                  The Camdex  Experience
                </h2>
                <p class="text-dark fw-normal font-16">
                   we prepare you to launch your career by providing a supportive,  creative, and professional environment from which to learn practical  skills, build a network of industry contacts, and gain real-world  experience. You’ll have the opportunity to generate innovative design  and business solutions.
@@ -629,7 +632,7 @@ Futures
       <div class="container">
          <div class="row justify-content-center text-center">
             <div class="col-lg-10 col-xl-8">
-               <h2 class="font-172 fw-bolder text-dark mt8">
+               <h2 class="font-172 fw-bold text-dark mt8">
                   FORM
                </h2>
                <p class="font-16 fw-bolder text-dark ">
