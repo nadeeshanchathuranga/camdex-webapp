@@ -6,13 +6,20 @@ use Illuminate\View\View;
 
 class PageController extends Controller
 {
-    public function index(): View
+    public function Index(): View
     {
         return view('app', ['page' => 'index']);
     }
 
-    public function about(): View
+    public function About(): View
     {
         return view('app', ['page' => 'about']);
     }
+
+   public function Instructor(): View
+    {
+        return view('app', ['page' => 'instructor']);
+    }
+
+
 }

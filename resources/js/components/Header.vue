@@ -32,7 +32,7 @@
                 <RouterLink class="nav-link-custom" to="/about">About</RouterLink>
               </li>
               <li>
-                <RouterLink class="nav-link-custom" :to="{ path: '/', hash: '#instructors' }">Instructors</RouterLink>
+                <RouterLink class="nav-link-custom" to="/instructor">Instructors</RouterLink>
               </li>
               <li>
                 <RouterLink class="nav-link-custom" :to="{ path: '/', hash: '#class-fees' }">Class Fees</RouterLink>
@@ -62,7 +62,7 @@
                 <RouterLink class="nav-link-custom" to="/about" @click="closeMenu">About</RouterLink>
               </li>
               <li>
-                <RouterLink class="nav-link-custom" :to="{ path: '/', hash: '#instructors' }" @click="closeMenu">Instructors</RouterLink>
+                <RouterLink class="nav-link-custom" to="/instructor" @click="closeMenu">Instructors</RouterLink>
               </li>
               <li>
                 <RouterLink class="nav-link-custom" :to="{ path: '/', hash: '#class-fees' }" @click="closeMenu">Class Fees</RouterLink>

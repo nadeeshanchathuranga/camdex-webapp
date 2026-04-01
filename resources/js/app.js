@@ -3,10 +3,12 @@ import { createApp, h } from 'vue';
 import { createRouter, createWebHistory, RouterView } from 'vue-router';
 import Index from './views/Index.vue';
 import About from './views/About.vue';
+import Instructor from './views/Instructor.vue';
 
 const routes = [
 	{ path: '/', name: 'home', component: Index },
 	{ path: '/about', name: 'about', component: About },
+	{ path: '/instructor', name: 'instructor', component: Instructor },
 ];
 
 const router = createRouter({
@@ -36,10 +38,15 @@ const app = createApp({
 const appElement = document.getElementById('app');
 const page = appElement?.dataset?.page;
 
-if (page === 'about') {
-	router.replace('/about');
-} else {
-	router.replace('/');
+const pageRouteMap = {
+	index: '/',
+	about: '/about',
+	instructor: '/instructor',
+};
+
+const targetPath = pageRouteMap[page] ?? '/';
+if (router.currentRoute.value.path !== targetPath) {
+	router.replace(targetPath);
 }
 
 app.use(router);
