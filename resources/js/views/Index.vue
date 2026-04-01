@@ -191,6 +191,10 @@
             </div>
          </div>
          <Instructors />
+         <TakeTour @takeTour="openVideo" />
+
+
+
          <div id="faq" class="row pt-5">
             <div class="col-12  ">
                <h2 class="font-48 fw-bolder text-center text-black pb-4">Make a Tour</h2>
@@ -337,6 +341,7 @@
    import Footer from '../components/Footer.vue';
    import Form from '../components/Form.vue';
    import Instructors from '../components/Instructors.vue';
+   import TakeTour from '../components/TakeTour.vue';
    import Fees from '../components/Fees.vue';
    import Syllabus from '../components/Syllabus.vue';
    const activeVideoLink = ref('');
