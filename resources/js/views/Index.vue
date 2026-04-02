@@ -189,9 +189,18 @@
                </p>
                <p class="pt-4"><a href="" class="text-dark fw-normal font-16 hvr-forward"><u>Institute Overview</u></a></p>
             </div>
-         </div>
-         <Instructors />
-         <TakeTour @takeTour="openVideo" />
+
+
+             <TakeTour
+:video-link="'https://youtu.be/dQw4w9WgXcQ'"
+@takeTour="openVideo"
+/>
+</div>
+<Instructors />
+<TakeTour
+:video-link="'https://youtu.be/o-YBDTqX_ZU'"
+@takeTour="openVideo"
+/>
 
 
 
@@ -350,8 +359,15 @@
    let heroCarouselInstance = null;
 
 
-   // Replace this with your real YouTube share link.
-   const videoLink = 'https://youtu.be/_UCA0tXzMMU?si=7dcjhq9rlp0Zq3db';
+   const openVideo = (newVideoLink) => {
+       validationMessage.value = '';
+       activeVideoLink.value = newVideoLink;
+   };
+
+   const stopVideo = () => {
+       activeVideoLink.value = '';
+       validationMessage.value = '';
+   };
 
    const toYoutubeEmbedUrl = (link) => {
        if (!link) {
@@ -396,20 +412,7 @@
        validationMessage.value = '';
    };
 
-   const openVideo = () => {
-       validationMessage.value = '';
-       activeVideoLink.value = videoLink;
-   };
 
-   const stopVideo = () => {
-       activeVideoLink.value = '';
-       validationMessage.value = '';
-   };
-
-   const closeVideo = () => {
-       activeVideoLink.value = '';
-       validationMessage.value = '';
-   };
 
       const initReviewsCarousel = () => {
          const $ = window.jQuery || window.$;

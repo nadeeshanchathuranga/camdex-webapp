@@ -6,7 +6,7 @@
     data-bs-toggle="modal"
     data-bs-target="#videoModal"
     aria-label="Play video"
-    @click="emit('takeTour')"
+    @click="emit('takeTour', videoLink)"
   >
     <span class="play-icon" aria-hidden="true"></span>
   </button>
@@ -18,7 +18,7 @@
         class="btn hero-btn-learn font-18 fw-bolder border-secondary px-5 py-2"
         data-bs-toggle="modal"
         data-bs-target="#videoModal"
-        @click="emit('takeTour')"
+        @click="emit('takeTour', videoLink)"
       >
         {{ label }}
         <i class="fa-brands fa-youtube ms-2 text-danger font-24 fw-normal" aria-hidden="true"></i>
@@ -36,6 +36,10 @@ defineProps({
   label: {
     type: String,
     default: 'Take Tour',
+  },
+  videoLink: {
+    type: String,
+    required: true,
   },
 });
 
