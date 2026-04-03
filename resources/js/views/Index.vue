@@ -231,7 +231,7 @@
          <div class="row ">
             <div class="col-12">
                <section id="apply-now" class="apply-now-section py-4 py-lg-5">
-                  <h2 class="font-172 fw-bold text-dark text-center pb-3">APPLY NOW</h2>
+                  <h2 class="font-172 fw-bold text-dark text-center pb-lg-3 pb-0">APPLY NOW</h2>
                   <div class="row align-items-center border-bottom border-3 border-top-0 border-end-0 border-start-0 border-secondary pb-4 mx-lg-3 my-5">
                      <div class="col-2">
                         <p class="fw-bold font-20 text-dark">01</p>

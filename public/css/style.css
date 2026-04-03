@@ -154,7 +154,9 @@ ul li {
 .a-main:hover {
     color: #ff2424 !important;
 }
-
+.font-110 {
+    font-size: 36px  !important;
+}
 .bg-brown {
     background-color: #292929;
 }
@@ -177,7 +179,9 @@ ul li {
 .section-e {
     height: 380px;
 }
-
+.banner-main-title .main-blue {
+    font-size: 30px;
+}
 
 .stats-strip-section {
     background-color: #1A4199;

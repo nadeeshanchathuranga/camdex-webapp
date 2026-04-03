@@ -11,6 +11,12 @@
 .font-64 {
     font-size: 33px;
 }
+.font-110 {
+    font-size: 36px;
+}
+.banner-main-title .main-blue {
+    font-size: 30px;
+}
 .e-top-section {
     margin-top: 0em;
     z-index: 100;
@@ -180,7 +186,7 @@ text-align: center;
     margin-left: 0;
 }
 
- 
+
 .section-e {
     height: 370px;
 }
@@ -301,7 +307,7 @@ text-align: center;
     width: 100%;
 }
 
-}
+
 .section-e {
     height: 370px;
 }
