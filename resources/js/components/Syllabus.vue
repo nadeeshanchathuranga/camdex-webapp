@@ -1,21 +1,46 @@
 <template>
-
      <div class="row pt-5">
-            <div class="col-12">
-               <div class="syllabus-section">
-                  <div class="syllabus-group ">
-                     <button type="button" class="syllabus-toggle border-bottom pb-3" @click="toggleSyllabus('cambridge')" :aria-expanded="openSyllabusSection === 'cambridge'">
-                     <span>CAMBRIDGE</span>
-                     <i :class="openSyllabusSection === 'cambridge' ? 'fa-solid fa-angle-up' : 'fa-solid fa-angle-down'"></i>
-                     </button>
-                     <div v-if="openSyllabusSection === 'cambridge'" class="syllabus-content pt-4">
-                        <div class="d-flex flex-wrap gap-2 gap-md-3 mb-4">
-                           <button type="button" class="syllabus-year-pill mb-0 mt-0 border-0" :class="{'active-pill': activeCambridgeYear === '2026-theory'}" @click="activeCambridgeYear = '2026-theory'">2026 OL Theory</button>
-                           <button type="button" class="syllabus-year-pill mb-0 mt-0 border-0" :class="{'active-pill': activeCambridgeYear === '2026-paper'}" @click="activeCambridgeYear = '2026-paper'">2026 OL Paper</button>
-                           <button type="button" class="syllabus-year-pill mb-0 mt-0 border-0" :class="{'active-pill': activeCambridgeYear === '2027-theory'}" @click="activeCambridgeYear = '2027-theory'">2027 Theory</button>
+            <!-- Filter Section -->
+            <div class="col-12 mb-5">
+               <div class="bg-light p-4 rounded shadow-sm">
+                  <div class="row g-4">
+                     <div class="col-12">
+                        <h6 class="fw-bold text-secondary mb-3 text-uppercase" style="letter-spacing: 1px; font-size: 0.85rem;">Select Syllabus</h6>
+                        <div class="d-flex flex-wrap gap-2">
+                           <input type="checkbox" class="btn-check" id="sylCambridge" value="cambridge" v-model="selectedSyllabus" autocomplete="off">
+                           <label class="btn btn-outline-primary rounded-pill px-4 py-2 fw-medium border-2" for="sylCambridge">Cambridge</label>
+
+                           <input type="checkbox" class="btn-check" id="sylEdexcel" value="edexcel" v-model="selectedSyllabus" autocomplete="off">
+                           <label class="btn btn-outline-primary rounded-pill px-4 py-2 fw-medium border-2" for="sylEdexcel">Edexcel</label>
                         </div>
+                     </div>
+                     <div class="col-12">
+                        <h6 class="fw-bold text-secondary mb-3 text-uppercase" style="letter-spacing: 1px; font-size: 0.85rem;">Select Course Type</h6>
+                        <div class="d-flex flex-wrap gap-2">
+                           <input type="checkbox" class="btn-check" id="course26Theory" value="2026-theory" v-model="selectedCourse" autocomplete="off">
+                           <label class="btn btn-outline-success rounded-pill px-4 py-2 fw-medium border-2" for="course26Theory">2026 OL Theory</label>
+
+                           <input type="checkbox" class="btn-check" id="course26Paper" value="2026-paper" v-model="selectedCourse" autocomplete="off">
+                           <label class="btn btn-outline-success rounded-pill px-4 py-2 fw-medium border-2" for="course26Paper">2026 OL Paper</label>
+
+                           <input type="checkbox" class="btn-check" id="course27Theory" value="2027-theory" v-model="selectedCourse" autocomplete="off">
+                           <label class="btn btn-outline-success rounded-pill px-4 py-2 fw-medium border-2" for="course27Theory">2027 Theory</label>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col-12">
+               <!-- Cambridge Content -->
+               <TransitionGroup name="fade-filter">
+                  <div key="cambridge" v-if="selectedSyllabus.includes('cambridge')" class="syllabus-section mb-5">
+                     <div class="syllabus-content">
+                        <h3 class="fw-bold mb-4 text-primary">Cambridge - <span class="text-dark">{{ selectedCourse.map(getCourseLabel).join(', ') }}</span></h3>
+
                         <!-- 2026 OL Theory Tab -->
-                        <div v-if="activeCambridgeYear === '2026-theory'" class="syllabus-table-wrap mb-3 animation-fade-in">
+                        <Transition name="fade-filter">
+                           <div v-if="selectedCourse.includes('2026-theory')" class="syllabus-table-wrap mb-3 shadow-sm rounded-3 p-3 bg-white border">
                            <h5 class="fw-bold font-20 text-dark mb-3">General Subjects (2026 OL Theory)</h5>
                            <div class="table-responsive">
                               <table class="table syllabus-table mb-4">
@@ -114,8 +139,10 @@
                               </table>
                            </div>
                         </div>
+                        </Transition>
                         <!-- 2026 OL Paper Tab -->
-                        <div v-if="activeCambridgeYear === '2026-paper'" class="syllabus-table-wrap mb-3 animation-fade-in">
+                        <Transition name="fade-filter">
+                           <div v-if="selectedCourse.includes('2026-paper')" class="syllabus-table-wrap mb-3 shadow-sm rounded-3 p-3 bg-white border">
                         <h5 class="fw-bold font-20 text-dark mb-3">General Subjects (2026 OL Paper)</h5>
                         <div class="table-responsive">
                            <table class="table syllabus-table mb-4">
@@ -214,8 +241,10 @@
                            </table>
                         </div>
                      </div>
+                        </Transition>
                         <!-- 2027 Theory Tab -->
-                        <div v-if="activeCambridgeYear === '2027-theory'" class="syllabus-table-wrap mb-3 animation-fade-in">
+                        <Transition name="fade-filter">
+                           <div v-if="selectedCourse.includes('2027-theory')" class="syllabus-table-wrap mb-3 shadow-sm rounded-3 p-3 bg-white border">
                         <h5 class="fw-bold font-20 text-dark mb-3">General Subjects (2027 Theory)</h5>
                         <div class="table-responsive">
                            <table class="table syllabus-table mb-4">
@@ -314,22 +343,20 @@
                            </table>
                         </div>
                      </div>
-                     </div>
+                     </Transition>
                   </div>
                </div>
-               <div class="syllabus-group">
-                  <button type="button" class="syllabus-toggle border-bottom pb-3" @click="toggleSyllabus('edexcel')" :aria-expanded="openSyllabusSection === 'edexcel'">
-                  <span>EDEXCEL</span>
-                  <i :class="openSyllabusSection === 'edexcel' ? 'fa-solid fa-angle-up' : 'fa-solid fa-angle-down'"></i>
-                  </button>
-                  <div v-if="openSyllabusSection === 'edexcel'" class="syllabus-content pt-4">
-                     <div class="d-flex flex-wrap gap-2 gap-md-3 mb-4">
-                        <button class="syllabus-year-pill mb-0 mt-0 border-0" :class="{ 'active-pill': activeEdexcelYear === '2026-theory' }" @click="activeEdexcelYear = '2026-theory'">2026 OL Theory</button>
-                        <button class="syllabus-year-pill mb-0 mt-0 border-0" :class="{ 'active-pill': activeEdexcelYear === '2026-paper' }" @click="activeEdexcelYear = '2026-paper'">2026 OL Paper</button>
-                        <button class="syllabus-year-pill mb-0 mt-0 border-0" :class="{ 'active-pill': activeEdexcelYear === '2027-theory' }" @click="activeEdexcelYear = '2027-theory'">2027 Theory</button>
-                     </div>
+               </TransitionGroup>
+
+               <!-- Edexcel Content -->
+               <TransitionGroup name="fade-filter">
+               <div key="edexcel" v-if="selectedSyllabus.includes('edexcel')" class="syllabus-section mb-5">
+                  <div class="syllabus-content">
+                     <h3 class="fw-bold mb-4 text-primary">Edexcel - <span class="text-dark">{{ selectedCourse.map(getCourseLabel).join(', ') }}</span></h3>
+
                      <!-- 2026 Theory Content -->
-                     <div v-if="activeEdexcelYear === '2026-theory'" class="syllabus-table-wrap mb-3">
+                     <Transition name="fade-filter">
+                        <div v-if="selectedCourse.includes('2026-theory')" class="syllabus-table-wrap mb-3 shadow-sm rounded-3 p-3 bg-white border">
                         <h5 class="fw-bold font-20 text-dark mb-3">General Subjects (2026 OL Theory)</h5>
                         <div class="table-responsive">
                            <table class="table syllabus-table mb-4">
@@ -428,8 +455,10 @@
                            </table>
                         </div>
                      </div>
+                     </Transition>
                      <!-- 2026 Paper Content -->
-                     <div v-if="activeEdexcelYear === '2026-paper'" class="syllabus-table-wrap mb-3">
+                     <Transition name="fade-filter">
+                     <div v-if="selectedCourse.includes('2026-paper')" class="syllabus-table-wrap mb-3 shadow-sm rounded-3 p-3 bg-white border">
                         <h5 class="fw-bold font-20 text-dark mb-3">General Subjects (2026 OL Paper)</h5>
                         <div class="table-responsive">
                            <table class="table syllabus-table mb-4">
@@ -528,8 +557,10 @@
                            </table>
                         </div>
                      </div>
+                     </Transition>
                      <!-- 2027 Theory Content -->
-                     <div v-if="activeEdexcelYear === '2027-theory'" class="syllabus-table-wrap mb-3">
+                     <Transition name="fade-filter">
+                     <div v-if="selectedCourse.includes('2027-theory')" class="syllabus-table-wrap mb-3 shadow-sm rounded-3 p-3 bg-white border">
                         <h5 class="fw-bold font-20 text-dark mb-3">General Subjects (2027 Theory)</h5>
                         <div class="table-responsive">
                            <table class="table syllabus-table mb-4">
@@ -628,8 +659,10 @@
                            </table>
                         </div>
                      </div>
+                     </Transition>
                   </div>
                </div>
+               </TransitionGroup>
             </div>
          </div>
 </template>
@@ -637,12 +670,38 @@
 <script setup>
 import { ref } from 'vue';
 
+const selectedSyllabus = ref(['cambridge']);
+const selectedCourse = ref(['2026-theory']);
 
-const openSyllabusSection = ref('cambridge');
-const activeCambridgeYear = ref('2026-theory');
-const activeEdexcelYear = ref('2026-theory');
+const courseLabels = {
+   '2026-theory': '2026 OL Theory',
+   '2026-paper': '2026 OL Paper',
+   '2027-theory': '2027 Theory',
+};
 
-const toggleSyllabus = (section) => {
-   openSyllabusSection.value = openSyllabusSection.value === section ? '' : section;
+const getCourseLabel = (val) => {
+   return courseLabels[val] || val;
+};
+
+const resetFilter = () => {
+   selectedSyllabus.value = ['cambridge'];
+   selectedCourse.value = ['2026-theory'];
 };
 </script>
+
+<style scoped>
+.fade-filter-enter-active,
+.fade-filter-leave-active {
+  transition: all 0.4s ease;
+}
+.fade-filter-enter-from,
+.fade-filter-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+.btn-check:checked + .btn {
+  background-color: #0d6efd;
+  color: white;
+  border-color: #0d6efd;
+}
+</style>
