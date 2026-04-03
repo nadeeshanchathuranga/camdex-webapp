@@ -12,7 +12,7 @@
   </button>
 
   <div v-else class="row">
-    <div class="col-12 text-center">
+    <div class="col-12 text-center py-lg-0 py-sm-4 py-3">
       <button
         type="button"
         class="btn hero-btn-learn font-18 fw-bolder border-secondary px-5 py-2"

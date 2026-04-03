@@ -95,6 +95,7 @@ text-align: center;
 
 .instructors-grid.owl-carousel {
     position: relative;
+        padding-right: 0;
 }
 
 .instructors-grid.owl-carousel .owl-nav {
@@ -124,7 +125,7 @@ text-align: center;
 }
 
 .instructors-grid.owl-carousel .owl-nav button.owl-next {
-    right: 8px;
+         right: -1em;
 }
 
 .instructors-grid.owl-carousel .owl-nav button i {
@@ -155,6 +156,8 @@ text-align: center;
     margin-top: 3em;
     width: unset;
 
+}.card-1 {
+    width: unset;
 }
 
 }
@@ -177,10 +180,7 @@ text-align: center;
     margin-left: 0;
 }
 
-.e-top-section {
-    margin-top: 0em;
-
-}
+ 
 .section-e {
     height: 370px;
 }
@@ -224,8 +224,11 @@ text-align: center;
 
 .instructors-grid.owl-carousel {
     position: relative;
+     padding-right: 0;
 }
-
+.card-1 {
+    width: unset;
+}
 .instructors-grid.owl-carousel .owl-nav {
     display: block;
 }
@@ -253,7 +256,7 @@ text-align: center;
 }
 
 .instructors-grid.owl-carousel .owl-nav button.owl-next {
-    right: 10px;
+    right: -1em;
 }
 
 .instructors-grid.owl-carousel .owl-nav button i {
@@ -297,8 +300,6 @@ text-align: center;
 .card-1 {
     width: 100%;
 }
-.e-top-section {
-    margin-top: 2em;
 
 }
 .section-e {

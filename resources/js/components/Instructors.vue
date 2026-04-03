@@ -1,7 +1,7 @@
 <template>
   <div id="instructors" class="row ">
             <div class="col-12 pt-5">
-               <h2 class="font-48 fw-bolder text-center text-black pb-5">
+               <h2 class="font-48 fw-bolder text-center text-black pb-lg-5 pb-3">
                   Instructors Directory
                </h2>
             </div>
@@ -174,7 +174,7 @@ const initInstructorsCarousel = () => {
       loop: true,
       nav: true,
       dots: false,
-      autoplay: true,
+      autoplay: false,
       autoplayTimeout: 3200,
       autoplayHoverPause: true,
       navText: [

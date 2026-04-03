@@ -188,13 +188,18 @@
                   At Camdex Education, we prepare you to launch your career by providing a supportive, creative, and professional environment from which to learn  practical skills, build a network of industry contacts, and gain  real-world experience. You’ll have the opportunity to generate  innovative design and business solutions.
                </p>
                <p class="pt-4"><a href="" class="text-dark fw-normal font-16 hvr-forward"><u>Institute Overview</u></a></p>
-            </div>
 
 
-             <TakeTour
+               <div class=" float-lg-start   pt-4">
+                           <TakeTour
 :video-link="'https://youtu.be/dQw4w9WgXcQ'"
 @takeTour="openVideo"
 />
+               </div>
+            </div>
+
+
+
 </div>
 <Instructors />
 <TakeTour
