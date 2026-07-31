@@ -37,9 +37,9 @@
                         <span class="font-16 fw-bolder text-dark">$15,000</span>
                      </div>
                      <hr class="my-4">
-                     <div class="d-flex justify-content-between align-items-center">
-                        <span class="font-16 fw-bolder text-dark">TOTAL</span>
-                        <span class="font-16 fw-bolder text-dark">$75,000</span>
+                     <div class="d-flex justify-content-between align-items-center fees-total-row">
+                        <span class="font-16 fw-bolder">TOTAL</span>
+                        <span class="font-18 fw-bolder">$75,000</span>
                      </div>
                   </div>
                </div>
@@ -67,9 +67,9 @@
                         <span class="font-16 fw-bolder text-dark">$15,000</span>
                      </div>
                      <hr class="my-4">
-                     <div class="d-flex justify-content-between align-items-center">
-                        <span class="font-16 fw-bolder text-dark">TOTAL</span>
-                        <span class="font-16 fw-bolder text-dark">$75,000</span>
+                     <div class="d-flex justify-content-between align-items-center fees-total-row">
+                        <span class="font-16 fw-bolder">TOTAL</span>
+                        <span class="font-18 fw-bolder">$75,000</span>
                      </div>
                   </div>
                </div>

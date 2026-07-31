@@ -1,19 +1,4 @@
 @media only screen and (max-width:767px) {
-.font-110 {
-    font-size: 40px;
-}
-.font-172 {
-    font-size: 40px;
-}
-.font-48 {
-    font-size: 30px;
-}
-.font-64 {
-    font-size: 33px;
-}
-.font-110 {
-    font-size: 36px;
-}
 .banner-main-title .main-blue {
     font-size: 30px;
 }
@@ -179,9 +164,6 @@ text-align: center;
     min-height: auto;
 
 }
-.font-172 {
-    font-size: 90px;
-}
 .left-3em {
     margin-left: 0;
 }
@@ -222,10 +204,6 @@ text-align: center;
 .mobile-nav-panel.open {
     transform: translateX(0);
     padding: 20px 30px;
-}
-
-.font-110 {
-    font-size: 48px;
 }
 
 .instructors-grid.owl-carousel {
@@ -290,16 +268,6 @@ text-align: center;
 
 
 @media (min-width:992px) and (max-width:1199px) {
-.font-172 {
-    font-size: 120px;
-}
-.font-18 {
-    font-size: 16px;
-}
-
-.font-48 {
-    font-size: 36px;
-}
 .left-3em {
     margin-left: 0;
 }
@@ -312,9 +280,6 @@ text-align: center;
     height: 370px;
 }
 
-.font-40 {
-    font-size: 30px;
-}
 .banner-main-title .main-blue {
 
     font-size: 40px;
@@ -325,13 +290,12 @@ text-align: center;
 }
     .hero-carousel.carousel {
 
+        right: 0 !important;
         bottom: -2em !important;
+        width: 100%;
 
     }
 
-    .font-110 {
-    font-size: 48px;
-}
 .inener-section {
     min-height: 300px;
 
@@ -343,43 +307,6 @@ text-align: center;
 
 
 @media (min-width: 1400px) {
-.font-12 {
-    font-size: 12px;
-}
-.font-14 {
-    font-size: 14px;
-}
-
-.font-16 {
-    font-size: 16px;
-}
-
-.font-18 {
-    font-size: 18px;
-}
-.font-20 {
-    font-size: 20px;
-}
-.font-24 {
-    font-size: 24px;
-}
-
-.font-30 {
-    font-size: 30px;
-}
-
-.font-48 {
-    font-size: 48px;
-}
-.font-64 {
-    font-size: 64px;
-}
-.font-110 {
-    font-size: 80px;
-}
-.font-172 {
-    font-size: 130px;
-}
 
 .tution-fees-section{
     min-height: 900px;
@@ -413,10 +340,6 @@ text-align: center;
     font-size: 36px;
 
 }
-.font-40 {
-    font-size: 40px;
-}
-
 
 
 .hero-carousel.carousel {

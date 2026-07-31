@@ -35,4 +35,9 @@ return [
         ],
     ],
 
+    'lms' => [
+        'url' => env('LMS_API_URL', 'https://lms.camdexedu.com'),
+        'key' => env('LMS_API_KEY'),
+    ],
+
 ];

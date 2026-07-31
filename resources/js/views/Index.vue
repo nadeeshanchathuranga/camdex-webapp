@@ -62,7 +62,17 @@
                   <span class="font-16 fw-normal text-black">5.0 rating of 12 reviews</span>
                </p>
                <div ref="reviewsCarousel" class="owl-carousel google-reviews-carousel">
-                  <article class="review-flip-card">
+                  <article
+                     class="review-flip-card"
+                     :class="{ 'is-flipped': isReviewFlipped }"
+                     tabindex="0"
+                     role="button"
+                     :aria-pressed="isReviewFlipped"
+                     aria-label="Show reviewer photo"
+                     @click="isReviewFlipped = !isReviewFlipped"
+                     @keydown.enter.prevent="isReviewFlipped = !isReviewFlipped"
+                     @keydown.space.prevent="isReviewFlipped = !isReviewFlipped"
+                  >
                      <div class="review-flip-card-inner">
                         <div class="review-card review-flip-front">
                            <p class="review-stars" aria-hidden="true">
@@ -87,6 +97,7 @@
                                  <p class="review-role font-12 fw-normal ">Project Manager</p>
                               </div>
                            </div>
+                           <span class="flip-hint"><i class="fa-solid fa-hand-pointer" aria-hidden="true"></i> Tap for photo</span>
                         </div>
                         <div class="review-photo-card review-flip-back">
                            <img :src="'/images/slider-img.png'" alt="Happy customer" class="review-photo">
@@ -232,9 +243,9 @@
             <div class="col-12">
                <section id="apply-now" class="apply-now-section py-4 py-lg-5">
                   <h2 class="font-172 fw-bold text-dark text-center pb-lg-3 pb-0">APPLY NOW</h2>
-                  <div class="row align-items-center border-bottom border-3 border-top-0 border-end-0 border-start-0 border-secondary pb-4 mx-lg-3 my-5">
+                  <div class="row align-items-center apply-step-row pb-4 mx-lg-3 my-5">
                      <div class="col-2">
-                        <p class="fw-bold font-20 text-dark">01</p>
+                        <p class="step-badge">01</p>
                      </div>
                      <div class="col-lg-3 col-7">
                         <p class="fw-bold font-20 text-dark">You Apply</p>
@@ -243,9 +254,9 @@
                         <p class="fw-normal font-18 text-dark">Tell us a little about yourself and we'll help with the rest. Our convenient online application tool only takes 10 minutes to complete.</p>
                      </div>
                   </div>
-                  <div class="row align-items-center border-bottom border-3 border-top-0 border-end-0 border-start-0 border-secondary pb-4 mx-lg-3 my-5">
+                  <div class="row align-items-center apply-step-row pb-4 mx-lg-3 my-5">
                      <div class="col-2">
-                        <p class="fw-bold font-20 text-dark">02</p>
+                        <p class="step-badge">02</p>
                      </div>
                      <div class="col-lg-3 col-7">
                         <p class="fw-bold font-20 text-dark">We Connect</p>
@@ -254,9 +265,9 @@
                         <p class="fw-normal font-18 text-dark">After you submit your application, an admissions representative will contact you and will help you to complete the process.</p>
                      </div>
                   </div>
-                  <div class="row align-items-center border-bottom border-3 border-top-0 border-end-0 border-start-0 border-secondary pb-4 mx-lg-3 my-5">
+                  <div class="row align-items-center apply-step-row pb-4 mx-lg-3 my-5">
                      <div class="col-2">
-                        <p class="fw-bold font-20 text-dark">03</p>
+                        <p class="step-badge">03</p>
                      </div>
                      <div class="col-lg-3 col-7">
                         <p class="fw-bold font-20 text-dark">You Get Ready</p>
@@ -290,7 +301,7 @@
                <button
                   type="button"
                   class="play-button"
-                  @click="openVideo"
+                  @click="openVideo(campusVideoLink)"
                   data-bs-toggle="modal"
                   data-bs-target="#videoModal"
                   aria-label="Play video"
@@ -361,6 +372,8 @@
    const activeVideoLink = ref('');
    const validationMessage = ref('');
    const reviewsCarousel = ref(null);
+   const isReviewFlipped = ref(false);
+   const campusVideoLink = 'https://youtu.be/dQw4w9WgXcQ';
    let heroCarouselInstance = null;
 
 
@@ -499,7 +512,7 @@
                 heroCarouselInstance = null;
           }
 
-       closeVideo();
+       stopVideo();
    });
 
 </script>

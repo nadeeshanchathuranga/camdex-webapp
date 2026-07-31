@@ -2,7 +2,7 @@
      <div class="row pt-5">
             <!-- Filter Section -->
             <div class="col-12 mb-5">
-               <div class="bg-light p-4 rounded shadow-sm">
+               <div class="syllabus-filter-panel bg-light p-4 rounded shadow-sm">
                   <div class="row g-4">
                      <div class="col-12">
                         <h6 class="fw-bolder text-black mb-3 text-uppercase font-20"  >Select Syllabus</h6>

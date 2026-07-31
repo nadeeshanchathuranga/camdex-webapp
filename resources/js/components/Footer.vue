@@ -50,21 +50,21 @@
 
                 <div class="row">
                     <div class="col-12">
-                        <div class=" d-flex justify-content-center flex-wrap gap-5  mt-5">
-                    <a href="#"  aria-label="Facebook" class="text-white fs-5">
-                        <i class="fa-brands fa-facebook-f hvr-shrink" aria-hidden="true"></i>
+                        <div class="d-flex justify-content-center flex-wrap gap-3 mt-5">
+                    <a href="#" aria-label="Facebook" class="social-icon-btn">
+                        <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
                     </a>
-                    <a href="#" aria-label="Twitter" class="text-white fs-5">
-                        <i class="fa-brands fa-x-twitter hvr-shrink" aria-hidden="true"></i>
+                    <a href="#" aria-label="Twitter" class="social-icon-btn">
+                        <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
                     </a>
-                    <a href="#" aria-label="LinkedIn" class="text-white fs-5">
-                        <i class="fa-brands fa-linkedin-in hvr-shrink" aria-hidden="true"></i>
+                    <a href="#" aria-label="LinkedIn" class="social-icon-btn">
+                        <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
                     </a>
-                    <a href="#" aria-label="YouTube" class="text-white fs-5">
-                        <i class="fa-brands fa-youtube hvr-shrink" aria-hidden="true"></i>
+                    <a href="#" aria-label="YouTube" class="social-icon-btn">
+                        <i class="fa-brands fa-youtube" aria-hidden="true"></i>
                     </a>
-                    <a href="#" aria-label="Instagram" class="text-white fs-5">
-                        <i class="fa-brands fa-instagram hvr-shrink" aria-hidden="true"></i>
+                    <a href="#" aria-label="Instagram" class="social-icon-btn">
+                        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                     </a>
                 </div>
                     </div>

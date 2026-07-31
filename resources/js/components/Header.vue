@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid bg-brand-blue-dark">
+  <div class="container-fluid site-header" :class="{ 'is-scrolled': isScrolled }">
     <div class="container">
       <div class="row align-items-center py-2">
         <div class=" col-lg-3 col-sm-4 col-6">
@@ -88,12 +88,26 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 
 const isMenuOpen = ref(false)
+const isScrolled = ref(false)
 
 const closeMenu = () => {
   isMenuOpen.value = false
 }
+
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 12
+}
+
+onMounted(() => {
+  handleScroll()
+  window.addEventListener('scroll', handleScroll, { passive: true })
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>
 
